@@ -10,17 +10,68 @@
     <h1>To Do or Not To Do</h1>
     <h4 id="isTheQuestion">That is the question...</h1>
 
+
     <form id="create-task-form" action="#" method="post">
       <label id="taskDescriptionLabel" for="new-task-description"> To Do Description: </label>
       <input type="text" id="new-task-description" name="new-task-description" placeholder="description">
       <input id="submitButton" type="submit" value="Create New Task">
+      <select>
+        <option>
+          *****
+        </option>
+        <option>
+          ****
+        </option>
+        <option>
+          ***
+        </option>
+        <option>
+          **
+        </option>
+        <option>
+          *
+        </option>
+      </select>
     </form>
 
+
+    <form id="create-NotToDoTask-form" action="#" method="post">
+      <label id="NotToDoTaskDescriptionLabel" for="new-NotToDoTask-description"> Not To Do Description: </label>
+      <input type="text" id="new-NotToDoTask-description" name="new-NotToDoTask-description" placeholder="description">
+      <input id="NotToDoSubmitButton" type="submit" value="Create New Task">
+      <select>
+        <option>
+          *****
+        </option>
+        <option>
+          ****
+        </option>
+        <option>
+          ***
+        </option>
+        <option>
+          **
+        </option>
+        <option>
+          *
+        </option>
+      </select>
+</form>
+
+
+<div id="ListWrapper">
     <div id="list">
       <h2>My Todos</h2>
       <ul id="tasks">
       </ul>
     </div>
+
+    <div id="NotToDoList">
+      <h2>My Not To Todos</h2>
+      <ul id="NotToDoTasks">
+      </ul>
+    </div>
+</div>
 
     <script src="./src/index.js"></script>
     <!-- <script src="./src/oo_index.js"></script>
