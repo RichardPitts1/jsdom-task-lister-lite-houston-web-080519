@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
   let listItem = document.getElementById('tasks');
   let NotToDoListItem = document.getElementById('NotToDoTasks');
   let item = document.querySelector('#new-task-description')
-  let NotToDoItem = document.getElementById('NotToDoTaskDescriptionLabel')
+  let NotToDoItem = document.querySelector('#new-NotToDoTask-description')
   let li = document.createElement('li');
   let NotToDoli = document.createElement('li');
   let label = document.getElementById('taskDescriptionLabel')
@@ -29,41 +29,42 @@ document.addEventListener("DOMContentLoaded", function(e) {
   NotToDoForm.addEventListener('submit', function(e) {
     e.preventDefault();
     NotToDoListItem.append(NotToDoli)
-    NotToDoli.append(inputForNotToDoText.value)
+    NotToDoli.innerText = NotToDoItem.value
 
-        // Delete button:
-        let deleteButton = document.createElement('button')
-        NotToDoli.append( deleteButton )
-        deleteButton.innerText = "Delete"
-        deleteButton.addEventListener('click', function(e){
-          NotToDoli.remove()
-        })
-
-         // Edit button:  You would have this toggle a global variable 
-    // that is a boolean.  It would set the condition for 
-    // the main submit form.
-    let editButton = document.createElement('button') 
-    NotToDoli.append ( editButton)
-    editButton.innerText = "Edit"
-    editButton.addEventListener('click', function(e) {
-      // if isEditOn == false {
-      //   isEditOn = true 
-      // } else if isEditOn == true {
-      //   isEditOn = false
-      // } 
-      // console.log(isTheQuestion)
-      // debugger
-      isTheQuestion.innerText = "Edit away! Godspeed"
-      NotToDoli.innerText = "Type it in the input box!"
-      label.innerHTML = "Place Your Edit Here:"
-      submitButton.value = "Submit Edited Text"
-      inputForText.value = "Edit it here..."
-      // SUBMIT BUTTON ADD EVENT LISTENER
-      submitButton.addEventListener('click', function(e) {
+    // Delete button:
+    let deleteButton = document.createElement('button')
+    NotToDoli.append( deleteButton )
+    deleteButton.innerText = "Delete"
+    deleteButton.addEventListener('click', function(e){
       NotToDoli.remove()
-      label.innerHTML = "Task Description"
-      submitButton.value = "Create New Task"
-      isTheQuestion.innerText = "That is the question..."
+    })
+
+        // Edit button:  You would have this toggle a global variable 
+  // that is a boolean.  It would set the condition for 
+  // the main submit form.
+  let editButton = document.createElement('button') 
+  NotToDoli.append ( editButton)
+  editButton.innerText = "Edit"
+  editButton.addEventListener('click', function(e) {
+    // if isEditOn == false {
+    //   isEditOn = true 
+    // } else if isEditOn == true {
+    //   isEditOn = false
+    // } 
+    // console.log(isTheQuestion)
+    // debugger
+    isTheQuestion.innerText = "Edit away! Godspeed"
+    NotToDoli.innerText = ""
+    NotToDoLabel.innerHTML = "Place Your Edit Here:"
+    NotToDoSubmitButton.value = "Submit Edited Text"
+    inputForText.value = "Edit it here..."
+    // SUBMIT BUTTON ADD EVENT LISTENER
+    NotToDoSubmitButton.addEventListener('click', function(e) {
+    NotToDoli.innerText = ""
+    label.innerHTML = "Task Description"
+    NotToDoSubmitButton.value = "Create New Task"
+    isTheQuestion.innerText = "That is the question..."
+    NotToDoLabel.innerHTML = "Not To Do Description:"
       })
     })
 
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
       // console.log(isTheQuestion)
       // debugger
       isTheQuestion.innerText = "Edit away! Godspeed"
-      li.innerText = "Type it in the input box!"
+      li.innerText = ""
       label.innerHTML = "Place Your Edit Here:"
       submitButton.value = "Submit Edited Text"
       inputForText.value = "Edit it here..."
