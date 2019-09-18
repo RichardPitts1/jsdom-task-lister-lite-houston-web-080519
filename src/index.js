@@ -14,11 +14,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     let isEditOn = true
 
+    //Grab items
     let item = document.querySelector('#new-task-description')
     let li = document.createElement('li');
     let label = document.getElementById('taskDescriptionLabel')
     let inputForText = document.getElementById("new-task-description")
-
+    let isTheQuestion = document.getElementById('isTheQuestion')
     let submitButton = document.getElementById('submitButton')
     // li.appendChild(document.createTextNode(`${form[0].value}`));
     listItem.append(li);
@@ -47,16 +48,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
       // } else if isEditOn == true {
       //   isEditOn = false
       // } 
-     
+      // console.log(isTheQuestion)
+      // debugger
+      isTheQuestion.innerText = "Edit away! Godspeed"
       li.innerText = "Type it in the input box!"
       label.innerHTML = "Place Your Edit Here:"
       submitButton.value = "Submit Edited Text"
       inputForText.value = "Edit it here..."
+      // SUBMIT BUTTON ADD EVENT LISTENER
       submitButton.addEventListener('click', function(e) {
       li.remove()
       label.innerHTML = "Task Description"
       submitButton.value = "Create New Task"
-
+      isTheQuestion.innerText = "That is the question..."
       })
     })
 
