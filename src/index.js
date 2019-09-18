@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
       li.remove()
       label.innerHTML = "Task Description"
       submitButton.value = "Create New Task"
-      inputForText.value = "description"
 
       })
     })
